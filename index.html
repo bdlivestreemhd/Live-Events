@@ -52,26 +52,12 @@ viewersRef.on("value", snapshot => {
 const count = snapshot.numChildren();
 document.getElementById("viewerCount").textContent = count;
 });
-</script> <center> <script type="text/javascript">
-	atOptions = {
-		'key' : 'd3b3987caee412f728b6039fae4fa5c0',
-		'format' : 'iframe',
-		'height' : 250,
-		'width' : 300,
-		'params' : {}
-	};
-</script>
+</script> <center> 
+	
 
-<script type="text/javascript">
-	atOptions = {
-		'key' : '38be8ae1a686e0e5880945709bb0aaa5',
-		'format' : 'iframe',
-		'height' : 90,
-		'width' : 728,
-		'params' : {}
-	};
-</script>
-<div id="container-ed5a4b7aa12e8a3a3cef8dc5db89adc0"></div> <footer class="p-4 text-center bg-gray-800 text-gray-400 text-xs"> © 2025 - Design By <a href="https://www.facebook.com/withrid">Sagor Islam Rid</a> </footer>
+<footer class="p-4 text-center bg-gray-800 text-gray-400 text-xs"> © 2025 - Design By <a href="https://www.facebook.com/withrid">Sagor Islam Rid</a> </footer>
+
+	
 <style> .donate-btn { background: linear-gradient(45deg, #ff0066, #6600ff); color: white; padding: 12px 24px; font-size: 18px; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); margin: 50px; }
 .overlay { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 99; }
 .popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #222; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); z-index: 100; width: 90%; max-width: 400px; }
@@ -80,13 +66,17 @@ document.getElementById("viewerCount").textContent = count;
 .number { font-size: 28px; font-weight: bold; margin-top: 15px; background: linear-gradient(to right, #00f0ff, #00ff94); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .copy-btn, .close-btn { margin-top: 10px; padding: 8px 16px; background: #00bcd4; color: white; border: none; border-radius: 6px; cursor: pointer; }
 .copy-btn:hover { background: #0097a7; }
-.close-btn:hover { background: #666; } </style>
-<script> function showPopup() { document.getElementById('popupBox').style.display = 'block'; document.getElementById('overlay').style.display = 'block'; }
+.close-btn:hover { background: #666; } 
+</style>
+<script> function showPopup() { document.getElementById('popupBox').style.display = 'block';
+			       { document.getElementById('overlay').style.display = 'block'; }
 function closePopup() { document.getElementById('popupBox').style.display = 'none'; document.getElementById('overlay').style.display = 'none'; }
 function copyNumber() { const number = document.getElementById("donateNumber").innerText; navigator.clipboard.writeText(number).then(() => { alert("Number copied: " + number); }); }
-const spinner = document.getElementById('spinner'); const channelList = document.getElementById('channelList');
-const bgColors = [ 'bg-gradient-to-r from-pink-500 to-yellow-500', 'bg-gradient-to-r from-green-400 to-blue-500', 'bg-gradient-to-r from-purple-500 to-pink-500', 'bg-gradient-to-r from-indigo-500 to-green-400' ];
-const channels = [ { name: "BAN-ZIM", logo: "https://i.postimg.cc/qv1GTj8F/btv.png", 
+const spinner = document.getElementById('spinner');
+const channelList = document.getElementById('channelList');
+			       
+const bgColors = [ 'bg-gradient-to-r from-pink-500 to-yellow-500', 'bg-gradient-to-r from-green-400 to-blue-500', 'bg-gradient-to-r from-purple-500 to-pink-500', 'bg-gradient-to-r from-indigo-500 to-green-400' ];const channels = [ 
+	          { name: "BAN-ZIM", logo: "https://i.postimg.cc/qv1GTj8F/btv.png", 
                     stream: "https://d1e7rcqq4o2ma.cloudfront.net/bpk-tv/1709/output/master.m3u8" }, 
                   { name: "IPL - 1", logo: "https://i.postimg.cc/tT4QgrfV/ipl.jpg", 
                    stream: "https://tv.bdixtv24.com/toffee/live.php?id=9b4b3941986a&e=.m3u8" }, 
@@ -107,11 +97,27 @@ function loadStream(streamURL) { showSpinner(); jw.load([{ file: streamURL }]); 
 function showSpinner() { spinner.classList.remove('hidden'); }
 function hideSpinner() { spinner.classList.add('hidden'); }
 function setActiveChannel(activeDiv) { document.querySelectorAll('#channelList > div').forEach(div => { div.classList.remove('ring-4', 'ring-cyan-400'); }); activeDiv.classList.add('ring-4', 'ring-cyan-400'); }
-channels.forEach((ch, idx) => { const div = document.createElement('div'); div.className = `rounded-lg p-2 cursor-pointer text-center hover:scale-110 transform transition text-xs ${bgColors[idx % bgColors.length]} shadow-md`; div.innerHTML = ` <img src="${ch.logo}" alt="${ch.name}" class="rounded mb-1 w-full object-cover h-16"> <p class="font-bold truncate">${ch.name}</p> `; div.addEventListener('click', () => { loadStream(ch.stream); setActiveChannel(div); }); channelList.appendChild(div);
-if (idx === 0) { div.classList.add('ring-4', 'ring-cyan-400'); jw = jwplayer("player").setup({ file: ch.stream, playbackRateControls: [0.75, 1, 1.25, 1.5], title: 'Live TV', width: '100%', aspectratio: '16:9', mute: false, repeat: true, autostart: true, primary: 'html5', type: 'm3u8', controls: true, responsive: true, skin: { name: "glow", active: "red" } }); } }); </script>
-<style> /* Disable text selection */ body { user-select: none; -webkit-user-select: none; /* Safari */ -ms-user-select: none; /* IE 10+ */ margin: 0; font-family: Arial, sans-serif; }
-/* Example styling */ .content { padding: 20px; }
-img { pointer-events: none; -webkit-user-drag: none; user-drag: none; } </style>
+channels.forEach((ch, idx) => { const div = document.createElement('div'); 
+div.className = `rounded-lg p-2 cursor-pointer text-center hover:scale-110 transform transition text-xs ${bgColors[idx % bgColors.length]} shadow-md`; div.innerHTML = ` <img src="${ch.logo}" alt="${ch.name}" class="rounded mb-1 w-full object-cover h-16"> <p class="font-bold truncate">${ch.name}</p> `; div.addEventListener('click', () => { loadStream(ch.stream); setActiveChannel(div); }); channelList.appendChild(div);
+if (idx === 0) { div.classList.add('ring-4', 'ring-cyan-400'); jw = jwplayer("player").setup({ file: ch.stream, playbackRateControls: [0.75, 1, 1.25, 1.5], 
+											      
+											      title: 'Live TV', 
+											      width: '100%', 
+											      aspectratio: '16:9', 
+											      mute: false, 
+											      repeat: true, 
+											      autostart: true, 
+											      primary: 'html5', 
+											      type: 'm3u8', 
+											      controls: true, 
+											      responsive: true, 
+											      skin: { name: "glow", active: "red" } }); } }); </script>
+<style> /* Disable text selection */ 
+body { user-select: none; -webkit-user-select: none; /* Safari */ -ms-user-select: none; /* IE 10+ */ margin: 0; font-family: Arial, sans-serif; }
+/* Example styling */ 
+.content { padding: 20px; }
+img { pointer-events: none; -webkit-user-drag: none; user-drag: none; } 
+</style>
 <script> // Disable right click document.addEventListener('contextmenu', event => event.preventDefault());
 // Disable dragging for all images document.querySelectorAll('img').forEach(img => { img.setAttribute('draggable', false); });
 // Optional: disable keyboard shortcuts like Ctrl+U, Ctrl+C document.addEventListener('keydown', function(e) { if ((e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 'c' || e.key === 'C')) || e.key === 'F12') { e.preventDefault(); } }); </script> </body>
