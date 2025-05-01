@@ -1,124 +1,377 @@
-<!DOCTYPE html><html lang="en">
-<head> <script type='text/javascript'>//<![CDATA[var uri = window.location.toString();if (uri.indexOf("%3D","%3D") > 0) {var clean_uri = uri.substring(0, uri.indexOf("%3D"));window.history.replaceState({}, document.title, clean_uri);}var uri = window.location.toString();if (uri.indexOf("%3D%3D","%3D%3D") > 0) {var clean_uri = uri.substring(0, uri.indexOf("%3D%3D"));window.history.replaceState({}, document.title, clean_uri);}var uri = window.location.toString();if (uri.indexOf("&m=1","&m=1") > 0) {var clean_uri = uri.substring(0, uri.indexOf("&m=1"));window.history.replaceState({}, document.title, clean_uri);}var uri = window.location.toString();if (uri.indexOf("?m=1","?m=1") > 0) {var clean_uri = uri.substring(0, uri.indexOf("?m=1"));window.history.replaceState({}, document.title, clean_uri);}//]]>
-</script> <meta charset="UTF-8" /> 
-<meta name="viewport" content="width=device-width, initial-scale=1" /> 
- <title>Live Cricket, Football Matches And Live TV Sports Channels</title>
-<!-- TailwindCSS --> 
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-<style> .loader { border-top-color: #06b6d4; animation: spin 1s linear infinite; }
-@keyframes spin { 0% { transform: rotate(0deg); }
-100% { transform: rotate(360deg); } } 
-</style><link rel="me" href="https://www.blogger.com/profile/03135866912159682424" /><meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/><meta name='google-adsense-platform-domain' content='blogspot.com'/></head>
-<body class="bg-gray-900 text-white min-h-screen flex flex-col"> 
-  <main class="flex-1 flex flex-col items-center p-4 space-y-6"> 
-    <section class="relative w-full max-w-5xl"> 
-    <div id="spinner" class="absolute inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50"> <div class="loader ease-linear rounded-full border-8 border-t-8 border-cyan-400 h-12 w-12"></div> </div> <div id="player" class="w-full rounded-lg bg-black shadow-xl border-2 border-white"></div> <script src="//content.jwplatform.com/libraries/IDzF9Zmk.js"></script> </section>
-<section class="w-full max-w-5xl grid grid-cols-4 gap-3"> 
-  <div id="channelList" class="col-span-4 grid grid-cols-4 gap-3"></div> 
-</section> <center> <script type="text/javascript">
-	atOptions = {
-		'key' : '3df23134d1d25273ee28c0bd9fed82d5',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/3df23134d1d25273ee28c0bd9fed82d5/invoke.js"></script></center> 
- 
-<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script> 
-<!-- Viewer Counter -->
-<div class="text-white text-sm p-2">👁️ <span id="viewerCount">0</span> People Are Watching The Live Stream</div>
-<script>
-// Replace with your Firebase config
-const firebaseConfig = {
-apiKey: "AIzaSyDhlJKHnQZsXa4Sc9-qc6mfDjNFRf8Xzww",
-authDomain: "withrid-88a98.firebaseapp.com",
-databaseURL: "https://withrid-88a98-default-rtdb.asia-southeast1.firebasedatabase.app",
-projectId: "withrid-88a98",
-storageBucket: "withrid-88a98.firebasestorage.app",
-messagingSenderId: "517654343662",
-appId: "1:517654343662:web:5e2f40cc19625860f968ff"
-};
-firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
-const viewersRef = db.ref("viewers");
-// When someone joins
-const userRef = viewersRef.push(true);
-userRef.onDisconnect().remove(); // Remove on disconnect
-// Update viewer count
-viewersRef.on("value", snapshot => {
-const count = snapshot.numChildren();
-document.getElementById("viewerCount").textContent = count;
-});
-</script> <center> 
-	
+<!DOCTYPE html>
+<html lang="en">
 
-<footer class="p-4 text-center bg-gray-800 text-gray-400 text-xs"> © 2025 - Design By <a href="https://www.facebook.com/withrid">Sagor Islam Rid</a> </footer>
-
-	
-<style> .donate-btn { background: linear-gradient(45deg, #ff0066, #6600ff); color: white; padding: 12px 24px; font-size: 18px; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); margin: 50px; }
-.overlay { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.6); z-index: 99; }
-.popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #222; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); z-index: 100; width: 90%; max-width: 400px; }
-.logo-row { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 15px; }
-.logo-row img { width: 35px; height: 35px; }
-.number { font-size: 28px; font-weight: bold; margin-top: 15px; background: linear-gradient(to right, #00f0ff, #00ff94); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.copy-btn, .close-btn { margin-top: 10px; padding: 8px 16px; background: #00bcd4; color: white; border: none; border-radius: 6px; cursor: pointer; }
-.copy-btn:hover { background: #0097a7; }
-.close-btn:hover { background: #666; } 
-</style>
-<script> function showPopup() { document.getElementById('popupBox').style.display = 'block';
-			       { document.getElementById('overlay').style.display = 'block'; }
-function closePopup() { document.getElementById('popupBox').style.display = 'none'; document.getElementById('overlay').style.display = 'none'; }
-function copyNumber() { const number = document.getElementById("donateNumber").innerText; navigator.clipboard.writeText(number).then(() => { alert("Number copied: " + number); }); }
-const spinner = document.getElementById('spinner');
-const channelList = document.getElementById('channelList');
-			       
-const bgColors = [ 'bg-gradient-to-r from-pink-500 to-yellow-500', 'bg-gradient-to-r from-green-400 to-blue-500', 'bg-gradient-to-r from-purple-500 to-pink-500', 'bg-gradient-to-r from-indigo-500 to-green-400' ];const channels = [ 
-	          { name: "BAN-ZIM", logo: "https://i.postimg.cc/qv1GTj8F/btv.png", 
-                    stream: "https://d1e7rcqq4o2ma.cloudfront.net/bpk-tv/1709/output/master.m3u8" }, 
-                  { name: "IPL - 1", logo: "https://i.postimg.cc/tT4QgrfV/ipl.jpg", 
-                   stream: "https://tv.bdixtv24.com/toffee/live.php?id=9b4b3941986a&e=.m3u8" }, 
-                  { name: "IPL - 2", logo: "https://i.postimg.cc/tT4QgrfV/ipl.jpg", 
-                   stream: "https://usertoken1.hls-video.net/media2/token/a3f0c81db39d64f85b6f6a5cfaa1b2ce/stream2.m3u8?token=604b0833fba37605ad3a63b369944f83" }, 
-                  { name: "PSL - 1", logo: "https://behtareen.pk/wp-content/uploads/2025/02/MixCollage-04-Feb-2025-04-53-PM-4546.jpg", 
-                   stream: "https://tv.bdixtv24.com/toffee/live.php?id=2d4852b1a355&e=.m3u8" }, 
-                  { name: "PSL - 2", logo: "https://i.brecorder.com/primary/2024/01/65b8371f193db.jpg", 
-                   stream: "https://live.tsports.com/mobile_hls/tsports_live_1/playlist.m3u8" },
-                  { name: "UCL", logo: "https://fiu-original.b-cdn.net/fontsinuse.com/use-images/N187/187444/187444.png", 
-                   stream: "https://tv.bdixtv24.com/toffee/live.php?id=43dcec1011e7&e=.m3u8" }, 
-                  { name: "LaLiga", logo: "https://www.stuff.tv/wp-content/uploads/sites/2/2023/02/LaLiga-logo.png", 
-                   stream: "https://tv.bdixtv24.com/toffee/live.php?id=abc6677968ef&e=.m3u8" }, 
-                  { name: "EPL", logo: "https://wallpapers.com/images/hd/premier-league-logo-in-blue-op2y0y49xfn7hbh7.jpg", stream: "https://starsporthindii.pages.dev/720p.m3u8" }, ];
+<head>
   
-let jw = null;
-function loadStream(streamURL) { showSpinner(); jw.load([{ file: streamURL }]); jw.play(); setTimeout(hideSpinner, 2000); }
-function showSpinner() { spinner.classList.remove('hidden'); }
-function hideSpinner() { spinner.classList.add('hidden'); }
-function setActiveChannel(activeDiv) { document.querySelectorAll('#channelList > div').forEach(div => { div.classList.remove('ring-4', 'ring-cyan-400'); }); activeDiv.classList.add('ring-4', 'ring-cyan-400'); }
-channels.forEach((ch, idx) => { const div = document.createElement('div'); 
-div.className = `rounded-lg p-2 cursor-pointer text-center hover:scale-110 transform transition text-xs ${bgColors[idx % bgColors.length]} shadow-md`; div.innerHTML = ` <img src="${ch.logo}" alt="${ch.name}" class="rounded mb-1 w-full object-cover h-16"> <p class="font-bold truncate">${ch.name}</p> `; div.addEventListener('click', () => { loadStream(ch.stream); setActiveChannel(div); }); channelList.appendChild(div);
-if (idx === 0) { div.classList.add('ring-4', 'ring-cyan-400'); jw = jwplayer("player").setup({ file: ch.stream, playbackRateControls: [0.75, 1, 1.25, 1.5], 
-											      
-											      title: 'Live TV', 
-											      width: '100%', 
-											      aspectratio: '16:9', 
-											      mute: false, 
-											      repeat: true, 
-											      autostart: true, 
-											      primary: 'html5', 
-											      type: 'm3u8', 
-											      controls: true, 
-											      responsive: true, 
-											      skin: { name: "glow", active: "red" } }); } }); </script>
-<style> /* Disable text selection */ 
-body { user-select: none; -webkit-user-select: none; /* Safari */ -ms-user-select: none; /* IE 10+ */ margin: 0; font-family: Arial, sans-serif; }
-/* Example styling */ 
-.content { padding: 20px; }
-img { pointer-events: none; -webkit-user-drag: none; user-drag: none; } 
-</style>
-<script> // Disable right click document.addEventListener('contextmenu', event => event.preventDefault());
-// Disable dragging for all images document.querySelectorAll('img').forEach(img => { img.setAttribute('draggable', false); });
-// Optional: disable keyboard shortcuts like Ctrl+U, Ctrl+C document.addEventListener('keydown', function(e) { if ((e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 'c' || e.key === 'C')) || e.key === 'F12') { e.preventDefault(); } }); </script> </body>
+  <script type='text/javascript'>
+//<![CDATA[
+var uri = window.location.toString();
+if (uri.indexOf("%3D","%3D") > 0) {
+var clean_uri = uri.substring(0, uri.indexOf("%3D"));
+window.history.replaceState({}, document.title, clean_uri);
+}
+var uri = window.location.toString();
+if (uri.indexOf("%3D%3D","%3D%3D") > 0) {
+var clean_uri = uri.substring(0, uri.indexOf("%3D%3D"));
+window.history.replaceState({}, document.title, clean_uri);
+}
+var uri = window.location.toString();
+if (uri.indexOf("&m=1","&m=1") > 0) {
+var clean_uri = uri.substring(0, uri.indexOf("&m=1"));
+window.history.replaceState({}, document.title, clean_uri);
+}
+var uri = window.location.toString();
+if (uri.indexOf("?m=1","?m=1") > 0) {
+var clean_uri = uri.substring(0, uri.indexOf("?m=1"));
+window.history.replaceState({}, document.title, clean_uri);
+}
+//]]>
+</script>
+  
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Live Cricket, Football Matches And Live TV Sports Channels</title>
+
+  <!-- TailwindCSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+
+  <style>
+    .loader {
+      border-top-color: #06b6d4;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+<link rel="me" href="https://www.blogger.com/profile/03135866912159682424" />
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+</head>
+
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+  <main class="flex-1 flex flex-col items-center p-4 space-y-6">
+    <section class="relative w-full max-w-5xl">
+      <div id="spinner" class="absolute inset-0 bg-black bg-opacity-50 hidden flex items-center justify-center z-50">
+        <div class="loader ease-linear rounded-full border-8 border-t-8 border-cyan-400 h-12 w-12"></div>
+      </div>
+      <div id="player" class="w-full rounded-lg bg-black shadow-xl border-2 border-white"></div>
+      <script src="//content.jwplatform.com/libraries/IDzF9Zmk.js"></script>
+    </section>
+
+    <section class="w-full max-w-5xl grid grid-cols-4 gap-3">
+      <div id="channelList" class="col-span-4 grid grid-cols-4 gap-3"></div>
+    </section>
+    
+    
+    <center>  
+
+    <marquee class="p-4 text-center bg-gray-800 text-blue-400 text-xs">
+      <p>
+        Notice: Live Stream is provided by third-party providers. We do not host any content on this site. Channels and trademarks displayed here are the copyright properties of their respective owners.
+      </p>
+    </marquee>
+    
+<p>Stream your favorite sports events and TV channels live вЂ” anytime, anywhere, and absolutely free! Catch all the action from football, cricket and more, along with 24/7 access to news, entertainment, and international channels. No subscription, no hidden fees вЂ” just instant streaming on your device. Stay updated with live scores, highlights, and breaking news, all in one place. Easy to use, mobile-friendly, and always free!
+<p> If you have any questions or comments regarding this website, please contact me <a href="https://www.facebook.com/withrid">Sagor Islam Rid.</a> I will be happy to answer your questions.
+ </p>
+  </main>
+  
+  
+   <!-- Firebase -->
+
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database-compat.js"></script> 
+
+<!-- Viewer Counter -->
+
+<div class="text-white text-sm p-2">рџ‘ЃпёЏ <span id="viewerCount">0</span> People Are Watching The Live Stream</div>
+
+<script>
+
+  // Replace with your Firebase config
+
+  const firebaseConfig = {
+
+    apiKey: "AIzaSyDhlJKHnQZsXa4Sc9-qc6mfDjNFRf8Xzww",
+
+    authDomain: "withrid-88a98.firebaseapp.com",
+
+    databaseURL: "https://withrid-88a98-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+    projectId: "withrid-88a98",
+
+    storageBucket: "withrid-88a98.firebasestorage.app",
+
+    messagingSenderId: "517654343662",
+
+    appId: "1:517654343662:web:5e2f40cc19625860f968ff"
+
+  };
+
+  firebase.initializeApp(firebaseConfig);
+
+  const db = firebase.database();
+
+  const viewersRef = db.ref("viewers");
+
+  // When someone joins
+
+  const userRef = viewersRef.push(true);
+
+  userRef.onDisconnect().remove(); // Remove on disconnect
+
+  // Update viewer count
+
+  viewersRef.on("value", snapshot => {
+
+    const count = snapshot.numChildren();
+
+    document.getElementById("viewerCount").textContent = count;
+
+  });
+
+</script>
+  
+  
+  
+  <center>
+    
+
+  
+  <footer class="p-4 text-center bg-gray-800 text-gray-400 text-xs">
+    В© 2025 - Design By <a href="https://www.facebook.com/withrid">Sagor Islam Rid</a>
+  </footer>
+
+  <style>
+    .donate-btn {
+      background: linear-gradient(45deg, #ff0066, #6600ff);
+      color: white;
+      padding: 12px 24px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      margin: 50px;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 99;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #222;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      z-index: 100;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .logo-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .logo-row img {
+      width: 35px;
+      height: 35px;
+    }
+
+    .number {
+      font-size: 28px;
+      font-weight: bold;
+      margin-top: 15px;
+      background: linear-gradient(to right, #00f0ff, #00ff94);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .copy-btn,
+    .close-btn {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #00bcd4;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover {
+      background: #0097a7;
+    }
+
+    .close-btn:hover {
+      background: #666;
+    }
+  </style>
+
+  <script>
+    function showPopup() {
+      document.getElementById('popupBox').style.display = 'block';
+      document.getElementById('overlay').style.display = 'block';
+    }
+
+    function closePopup() {
+      document.getElementById('popupBox').style.display = 'none';
+      document.getElementById('overlay').style.display = 'none';
+    }
+
+    function copyNumber() {
+      const number = document.getElementById("donateNumber").innerText;
+      navigator.clipboard.writeText(number).then(() => {
+        alert("Number copied: " + number);
+      });
+    }
+
+    const spinner = document.getElementById('spinner');
+    const channelList = document.getElementById('channelList');
+
+    const bgColors = [
+      'bg-gradient-to-r from-pink-500 to-yellow-500',
+      'bg-gradient-to-r from-green-400 to-blue-500',
+      'bg-gradient-to-r from-purple-500 to-pink-500',
+      'bg-gradient-to-r from-indigo-500 to-green-400'
+    ];
+
+    const channels = [
+      { name: "BAN-ZIM", logo: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghmi85tUkv0qdJz82ATwmbnidKTW8vzxC4hWRz8n1-_1G-qbltlPTZJDjEQL7sAwlTXyG5rspT10gKCz0ATVKP16WPMTHw7i5jPqhOQ_AvpSCG57Tj_4tKXao5C5jccSJFg7vjYSjbtQ9vHzCkTGG8HWOw8almhZfxxxofxa07cqHYQDm8qe76lQDVDVY/s1600/Capture.JPG", stream: "https://d1e7rcqq4o2ma.cloudfront.net/bpk-tv/1709/output/master.m3u8" },
+      { name: "IPL - 1", logo: "https://i.pinimg.com/736x/2b/0a/e1/2b0ae13cd927906c72b4d09ebd09f52f.jpg", stream: "https://tv.bdixtv24.com/toffee/live.php?id=9b4b3941986a&e=.m3u8" },
+      { name: "IPL - 2", logo: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVBgXVxjz9Aib9eW6D0-ZRnQX_459Mc6-Q34gHHmRp9y3seKobOERKLvi5LlylvoCmRV8GIPgoYymbT-qiNVGz2hqmjxS0oXjDzVko4QNFblJJ5Ee-ZZKap6qNV-jHLjizI8JNDsPJNYjzW5-T15ED4-me1OAD9DnhKTg9xH0tGootrAMBGYZHyn6xJ7k/s1600/IPL.png", stream: "https://live-test.tsports.com/live-02/index.m3u8?hdnts=URLPrefix=aHR0cHM6Ly9saXZlLXRlc3QudHNwb3J0cy5jb20v~Expires=1746112614300~hmac=a1739d8f33d27a64e91c1bcb841fafb08e5e1d8905631afd54a373997c9dae6c" },
+      { name: "PSL - 1", logo: "https://behtareen.pk/wp-content/uploads/2025/02/MixCollage-04-Feb-2025-04-53-PM-4546.jpg", stream: "https://tv.bdixtv24.com/toffee/live.php?id=2d4852b1a355&e=.m3u8" },
+      { name: "PSL - 2", logo: "https://i.brecorder.com/primary/2024/01/65b8371f193db.jpg", stream: "https://live-test.tsports.com/live-01/index.m3u8?hdnts=URLPrefix=aHR0cHM6Ly9saXZlLXRlc3QudHNwb3J0cy5jb20v~Expires=1746112369300~hmac=db8b5b1df417ab3abb833c1cd460376a1f648f5e00e32b2ccf81fe2b6f711435" },
+      { name: "UCL", logo: "https://fiu-original.b-cdn.net/fontsinuse.com/use-images/N187/187444/187444.png", stream: "https://tv.bdixtv24.com/toffee/live.php?id=43dcec1011e7&e=.m3u8" },
+      { name: "LaLiga", logo: "https://www.stuff.tv/wp-content/uploads/sites/2/2023/02/LaLiga-logo.png", stream: "https://tv.bdixtv24.com/toffee/live.php?id=abc6677968ef&e=.m3u8" },
+      { name: "EPL", logo: "https://wallpapers.com/images/hd/premier-league-logo-in-blue-op2y0y49xfn7hbh7.jpg", stream: "https://starsporthindii.pages.dev/720p.m3u8" },
+    ];
+
+    let jw = null;
+
+    function loadStream(streamURL) {
+      showSpinner();
+      jw.load([{ file: streamURL }]);
+      jw.play();
+      setTimeout(hideSpinner, 2000);
+    }
+
+    function showSpinner() {
+      spinner.classList.remove('hidden');
+    }
+
+    function hideSpinner() {
+      spinner.classList.add('hidden');
+    }
+
+    function setActiveChannel(activeDiv) {
+      document.querySelectorAll('#channelList > div').forEach(div => {
+        div.classList.remove('ring-4', 'ring-cyan-400');
+      });
+      activeDiv.classList.add('ring-4', 'ring-cyan-400');
+    }
+
+    channels.forEach((ch, idx) => {
+      const div = document.createElement('div');
+      div.className = `rounded-lg p-2 cursor-pointer text-center hover:scale-110 transform transition text-xs ${bgColors[idx % bgColors.length]} shadow-md`;
+      div.innerHTML = `
+        <img src="${ch.logo}" alt="${ch.name}" class="rounded mb-1 w-full object-cover h-16">
+        <p class="font-bold truncate">${ch.name}</p>
+      `;
+      div.addEventListener('click', () => {
+        loadStream(ch.stream);
+        setActiveChannel(div);
+      });
+      channelList.appendChild(div);
+
+      if (idx === 0) {
+        div.classList.add('ring-4', 'ring-cyan-400');
+        jw = jwplayer("player").setup({
+          file: ch.stream,
+          playbackRateControls: [0.75, 1, 1.25, 1.5],
+          title: 'Live TV',
+          width: '100%',
+          aspectratio: '16:9',
+          mute: false,
+          repeat: true,
+          autostart: true,
+          primary: 'html5',
+          type: 'm3u8',
+          controls: true,
+          responsive: true,
+          skin: { name: "glow", active: "red" }
+        });
+      }
+    });
+  </script>
+
+  
+    <style>
+    /* Disable text selection */
+    body {
+      user-select: none;
+      -webkit-user-select: none; /* Safari */
+      -ms-user-select: none;     /* IE 10+ */
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Example styling */
+    .content {
+      padding: 20px;
+    }
+
+    img {
+      pointer-events: none;
+      -webkit-user-drag: none;
+      user-drag: none;
+    }
+  </style>
+
+  <script>
+    // Disable right click
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // Disable dragging for all images
+    document.querySelectorAll('img').forEach(img => {
+      img.setAttribute('draggable', false);
+    });
+
+    // Optional: disable keyboard shortcuts like Ctrl+U, Ctrl+C
+    document.addEventListener('keydown', function(e) {
+      if ((e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 'c' || e.key === 'C')) || e.key === 'F12') {
+        e.preventDefault();
+      }
+    });
+  </script>
+  
+  
+  </body>
+
 </html>
