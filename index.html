@@ -233,15 +233,19 @@ window.history.replaceState({}, document.title, clean_uri);
     ];
 
     const channels = [
-      { name: "BAN-ZIM", logo: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEghmi85tUkv0qdJz82ATwmbnidKTW8vzxC4hWRz8n1-_1G-qbltlPTZJDjEQL7sAwlTXyG5rspT10gKCz0ATVKP16WPMTHw7i5jPqhOQ_AvpSCG57Tj_4tKXao5C5jccSJFg7vjYSjbtQ9vHzCkTGG8HWOw8almhZfxxxofxa07cqHYQDm8qe76lQDVDVY/s1600/Capture.JPG", stream: "https://d1e7rcqq4o2ma.cloudfront.net/bpk-tv/1709/output/master.m3u8" },
-      { name: "IPL - 1", logo: "https://i.pinimg.com/736x/2b/0a/e1/2b0ae13cd927906c72b4d09ebd09f52f.jpg", stream: "https://tv.bdixtv24.com/toffee/live.php?id=9b4b3941986a&e=.m3u8" },
-      { name: "IPL - 2", logo: "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjVBgXVxjz9Aib9eW6D0-ZRnQX_459Mc6-Q34gHHmRp9y3seKobOERKLvi5LlylvoCmRV8GIPgoYymbT-qiNVGz2hqmjxS0oXjDzVko4QNFblJJ5Ee-ZZKap6qNV-jHLjizI8JNDsPJNYjzW5-T15ED4-me1OAD9DnhKTg9xH0tGootrAMBGYZHyn6xJ7k/s1600/IPL.png", stream: "https://live-test.tsports.com/live-02/index.m3u8?hdnts=URLPrefix=aHR0cHM6Ly9saXZlLXRlc3QudHNwb3J0cy5jb20v~Expires=1746112614300~hmac=a1739d8f33d27a64e91c1bcb841fafb08e5e1d8905631afd54a373997c9dae6c" },
-      { name: "PSL - 1", logo: "https://behtareen.pk/wp-content/uploads/2025/02/MixCollage-04-Feb-2025-04-53-PM-4546.jpg", stream: "https://tv.bdixtv24.com/toffee/live.php?id=2d4852b1a355&e=.m3u8" },
-      { name: "PSL - 2", logo: "https://i.brecorder.com/primary/2024/01/65b8371f193db.jpg", stream: "https://live-test.tsports.com/live-01/index.m3u8?hdnts=URLPrefix=aHR0cHM6Ly9saXZlLXRlc3QudHNwb3J0cy5jb20v~Expires=1746112369300~hmac=db8b5b1df417ab3abb833c1cd460376a1f648f5e00e32b2ccf81fe2b6f711435" },
-      { name: "UCL", logo: "https://fiu-original.b-cdn.net/fontsinuse.com/use-images/N187/187444/187444.png", stream: "https://tv.bdixtv24.com/toffee/live.php?id=43dcec1011e7&e=.m3u8" },
-      { name: "LaLiga", logo: "https://www.stuff.tv/wp-content/uploads/sites/2/2023/02/LaLiga-logo.png", stream: "https://tv.bdixtv24.com/toffee/live.php?id=abc6677968ef&e=.m3u8" },
-      { name: "EPL", logo: "https://wallpapers.com/images/hd/premier-league-logo-in-blue-op2y0y49xfn7hbh7.jpg", stream: "https://starsporthindii.pages.dev/720p.m3u8" },
-    ];
+        { name: "T Sports", logo: "https://i.ibb.co.com/4ZTWnY3Y/IPL-Tsports.png", stream: "https://live-test.tsports.com/live-02/index.m3u8?hdnts=URLPrefix=aHR0cHM6Ly9saXZlLXRlc3QudHNwb3J0cy5jb20v~Expires=1746350410300~hmac=11fdfb9bbebe28cf3ee1f75d2961b81db497a4319d7e4cf5308dd6e4206dc894" },
+        { name: "Toffee", logo: "https://i.ibb.co.com/bggtwddz/IPL-Toffee.png", stream: "https://tv.bdixtv24.com/toffee/live.php?id=9b4b3941986a&e=.m3u8" },
+        { name: "T Sports", logo: "https://i.ibb.co.com/VWp69ZwJ/PSL-Tsports.png", stream: "https://live-test.tsports.com/live-01/index.m3u8?hdnts=URLPrefix=aHR0cHM6Ly9saXZlLXRlc3QudHNwb3J0cy5jb20v~Expires=1746350468300~hmac=282296343c7a8023b7222fb519173141469f89fc9699ea0dd138878cb9b991f6" },
+        { name: "Toffee", logo: "https://i.ibb.co.com/pjJbpxcX/PSL-Toffee.png", stream: "https://tv.bdixtv24.com/toffee/live.php?id=2d4852b1a355&e=.m3u8" },
+        { name: "LaLiga", logo: "https://i.ibb.co.com/RkwrYJxx/La-Liga-logo.png", stream: "https://tv.bdixtv24.com/toffee/live.php?id=abc6677968ef&e=.m3u8" },
+        { name: "EPL", logo: "https://i.ibb.co.com/ccnjHBRd/EPL-Logo.jpg", stream: "https://live.nbadigestnow.com/live/80945814EAAA28358340C14F014E5E51/2.m3u8" },
+        { name: "UCL", logo: "https://i.ibb.co.com/gM38nyMg/187444.png", stream: "https://ag9wzq.fubohd.com/tudn/mono.m3u8?token=25b77180c09b6dd32d4d6a2e39eba1013d3f0453-b0-1746316519-1746298519" },
+        { name: "RSL", logo: "https://i.ibb.co.com/G3fr3mGC/RSL.jpg", stream: "https://di-kzbhv8pw.vo.lswcdn.net/sportitalia/sisolocalcio.smil/playlist.m3u8" },
+        { name: "RTA Sports", logo: "https://i.ibb.co.com/DPcLRwXR/RTA-Sports.jpg", stream: "https://rtatv.akamaized.net/Content/HLS/Live/channel(RTA3)/variant.m3u8" },
+        { name: "DD Sports", logo: "https://i.ibb.co.com/N6k8zH3w/dd-sports.jpg", stream: "https://d3eyhgoylams0m.cloudfront.net/v1/master/93ce20f0f52760bf38be911ff4c91ed02aa2fd92/ed7bd2c7-8d10-4051-b397-2f6b90f99acb/index.m3u8?aws.sessionId=0abc6b14-c563-4851-a49b-4329f9d22be4" },
+        { name: "Sony Ten 1", logo: "https://i.ibb.co.com/r9XB9t2/Sony-Ten-1.jpg", stream: "https://tv.bdixtv24.com/toffee/live.php?id=43dcec1011e7&e=.m3u8" },
+        { name: "Sony Ten 2", logo: "https://i.ibb.co.com/n8c9f8jF/Sony-Ten-2.jpg", stream: "https://tv.bdixtv24.com/toffee/live.php?id=abc6677968ef&e=.m3u8" },
+      ];
 
     let jw = null;
 
